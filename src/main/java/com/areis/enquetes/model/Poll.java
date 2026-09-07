@@ -23,7 +23,6 @@ public class Poll {
   @Column(nullable = false)
   private LocalDateTime startDate;
 
-  @Column(nullable = false)
   private LocalDateTime endDate;
 
   @Column(nullable = false)

@@ -1,5 +1,6 @@
 package com.areis.enquetes.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.UUID;
@@ -13,6 +14,7 @@ public class Option {
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "poll_id")
+  @JsonIgnore
   private Poll poll;
 
   @Column(nullable = false)

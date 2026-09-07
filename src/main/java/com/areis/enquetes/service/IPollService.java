@@ -11,6 +11,7 @@ public interface IPollService {
   public Poll create(Poll poll);
   public Poll update(UUID id, Poll poll);
   public void delete(UUID id);
+  public Poll get(UUID id);
   public List<Poll> list();
   public List<Poll> listByStatus(PollStatus status);
 

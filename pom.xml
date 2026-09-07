@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.areis</groupId>
-	<artifactId>enquetes</artifactId>
+	<artifactId>api-enquetes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>

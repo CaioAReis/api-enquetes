@@ -26,6 +26,12 @@ public class PollServiceImpl implements IPollService {
 
   @Override
   public Poll create(Poll poll) {
+    if (poll.getOptions() != null) {
+      poll.getOptions().forEach(option -> {
+        option.setPoll(poll);
+        option.setVotes(0);
+      });
+    }
     return pollRepo.save(poll);
   }
 
@@ -47,6 +53,11 @@ public class PollServiceImpl implements IPollService {
     Poll existingPoll = pollRepo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Poll not found!"));
 
     pollRepo.deleteById(existingPoll.getId());
+  }
+
+  @Override
+  public Poll get(UUID id) {
+    return pollRepo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Poll not found!"));
   }
 
   @Override

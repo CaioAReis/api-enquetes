@@ -33,6 +33,11 @@ public class PollController {
     return ResponseEntity.ok(service.list());
   }
 
+  @GetMapping("/{id}")
+  public ResponseEntity<Poll> get(@PathVariable UUID id) {
+    return ResponseEntity.ok(service.get(id));
+  }
+
   @DeleteMapping
   public ResponseEntity<Void> delete(@RequestParam UUID id) {
     service.delete(id);
